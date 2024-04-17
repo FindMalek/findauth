@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# Replace "build" with the name of your build script
+npm run build
