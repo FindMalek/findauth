@@ -18,14 +18,18 @@
     "lint:fix": "next lint --fix",
     "lint:strict": "next lint '*/**/*.{js,jsx,ts,tsx}'",
     "prettier": "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}",
-    "prettier:fix": "prettier . --write"
+    "prettier:fix": "prettier . --write",
+    "fix": "prettier . --write && next lint --fix"
   },
   "dependencies": {
     "@commitlint/config-conventional": "^19.2.2",
+    "@radix-ui/react-toast": "^1.1.5",
+    "@vercel/analytics": "^1.2.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.368.0",
     "next": "14.2.1",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.2.2",
