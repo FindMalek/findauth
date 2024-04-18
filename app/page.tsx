@@ -14,8 +14,10 @@ export default function Home() {
         </h1>
         <p></p>
         <p className="relative z-10 mx-auto my-2 max-w-lg text-center text-sm text-neutral-500">
-          Welcome to FindPlate - the easiest way to find your next meal. We&apos;re currently in private beta, but we&apos;d love to have you join our waitlist
-          We promise to never spam you, and you can unsubscribe at any time.
+          Welcome to FindPlate - the easiest way to find your next meal.
+          We&apos;re currently in private beta, but we&apos;d love to have you
+          join our waitlist We promise to never spam you, and you can
+          unsubscribe at any time.
         </p>
 
         <div className="flex items-center">
@@ -27,9 +29,12 @@ export default function Home() {
             />
             <div className="absolute inset-y-0 right-0 flex items-center pr-3">
               <Icons.arrowRight
-                className={cn(buttonVariants({
-                  size: "icon",
-                }), "z-10 size-6 text-gray-300")}
+                className={cn(
+                  buttonVariants({
+                    size: "icon",
+                  }),
+                  "z-10 size-6 text-gray-300"
+                )}
               />
             </div>
           </div>
