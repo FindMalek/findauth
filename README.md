@@ -42,9 +42,9 @@ We are working on the documentation to get started with Midday for local develop
 
 ### Services
 
-- Trigger.dev (background jobs)
-- Nodemailer (email)
-- Novu (notifications)
+- Trigger.dev (Background jobs)
+- Nodemailer (Email)
+- Novu (Notifications)
 - Github Actions (CI/CD)
 - Konnect (Payments)
 - Loops (Marketing email)

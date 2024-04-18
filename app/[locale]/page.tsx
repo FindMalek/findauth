@@ -1,44 +1,51 @@
-import { cn } from "@/lib/utils"
+import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
+
+import { siteConfig } from "@/config/site"
 
 import { BackgroundBeams } from "@/components/ui/background-beams"
-import { buttonVariants } from "@/components/ui/button"
-import { Icons } from "@/components/ui/icons"
-import { Input } from "@/components/ui/input"
+import { WaitlistForm } from "@/components/form/waitlist"
 
+export async function generateMetadata() {
+  const t = await getTranslations("app.pages.home")
+
+  return {
+    title: t("title") + " | " + siteConfig.name,
+    description: t("description"),
+    openGraph: {
+      title: `${siteConfig.name} | ${t("title")}`,
+      description: t("description"),
+      images: [
+        {
+          url: `${siteConfig.url}/opengraph/waitlist.png`,
+          alt: siteConfig.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${siteConfig.name} | ${t("title")}`,
+      description: siteConfig.description,
+      images: [`${siteConfig.url}/opengraph/waitlist.png`],
+      creator: "@findmalek",
+    },
+  }
+}
 export default function Home() {
+  const t = useTranslations("app.pages.home")
+
   return (
     <div className="relative flex h-screen w-full flex-col items-center justify-center bg-neutral-950 antialiased">
       <div className="mx-auto max-w-2xl p-4">
         <h1 className="relative z-10 bg-gradient-to-b from-neutral-200  to-neutral-600 bg-clip-text text-center font-sans text-5xl font-bold text-transparent md:text-7xl">
-          Join the waitlist
+          {t("join-the-waitlist")}
         </h1>
         <p></p>
         <p className="relative z-10 mx-auto my-2 max-w-lg text-center text-sm text-neutral-500">
-          Welcome to FindPlate - the easiest way to find your next meal.
-          We&apos;re currently in private beta, but we&apos;d love to have you
-          join our waitlist We promise to never spam you, and you can
-          unsubscribe at any time.
+          {t("paragraph")}
         </p>
 
-        <div className="flex items-center">
-          <div className="relative w-full">
-            <Input
-              type="email"
-              placeholder="example@email.com"
-              className="relative z-10 my-5"
-            />
-            <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <Icons.arrowRight
-                className={cn(
-                  buttonVariants({
-                    size: "icon",
-                  }),
-                  "z-10 size-6 text-gray-300"
-                )}
-              />
-            </div>
-          </div>
-        </div>
+        <WaitlistForm />
       </div>
       <BackgroundBeams />
     </div>

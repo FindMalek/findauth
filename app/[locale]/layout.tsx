@@ -1,15 +1,19 @@
+import "@/styles/globals.css"
+
+import type { Metadata, Viewport } from "next"
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
+import { LogSnagProvider } from "@logsnag/next"
 
-import "@/styles/globals.css"
+import { env } from "@/env.mjs"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from "@/components/layout/analytics"
+import { LayoutWrapper } from "@/components/layout/layout-wrapper"
 import { TailwindIndicator } from "@/components/layout/tailwind-indicator"
-import { ThemeProvider } from "@/components/layout/theme-provider"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -28,7 +32,21 @@ interface RootLayoutProps {
   }
 }
 
-export const metadata = {
+export const viewport: Viewport = {
+  width: "device-width",
+  height: "device-height",
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5,
+  userScalable: false,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+}
+
+export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -48,10 +66,6 @@ export const metadata = {
     },
   ],
   creator: "findmalek",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -59,21 +73,24 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [{ url: `${siteConfig.url}/og.png`, alt: siteConfig.name }],
+    images: [
+      { url: `${siteConfig.url}/opengraph/og.png`, alt: siteConfig.name },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/og.png`],
+    images: [`${siteConfig.url}/opengraph/og.png`],
     creator: "@findmalek",
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    shortcut: "/favicons/favicon-16x16.png",
+    apple: "/favicons/apple-touch-icon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
+  metadataBase: new URL(siteConfig.url),
 }
 
 export default function RootLayout({
@@ -82,7 +99,12 @@ export default function RootLayout({
 }: RootLayoutProps) {
   return (
     <html lang={locale} suppressHydrationWarning>
-      <head />
+      <head>
+        <LogSnagProvider
+          token={env.LOGSNOG_API_TOKEN}
+          project={env.LOGSNOG_PROJECT_NAME}
+        />
+      </head>
       <body
         className={cn(
           "bg-background min-h-screen font-sans antialiased",
@@ -90,12 +112,12 @@ export default function RootLayout({
           fontHeading.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <LayoutWrapper locale={locale}>
           {children}
           <Analytics />
           <Toaster />
           <TailwindIndicator />
-        </ThemeProvider>
+        </LayoutWrapper>
       </body>
     </html>
   )
