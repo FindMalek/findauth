@@ -1,0 +1,15 @@
+{
+  "app": {
+    "pages": {
+      "home": {
+        "title": "Home",
+        "content": "Welcome to my app!"
+      }
+    },
+    "components": {
+      "header": {
+        "title": "My App"
+      }
+    }
+  }
+}

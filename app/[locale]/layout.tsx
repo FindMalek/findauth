@@ -23,6 +23,9 @@ const fontHeading = localFont({
 
 interface RootLayoutProps {
   children: React.ReactNode
+  params: {
+    locale: string
+  }
 }
 
 export const metadata = {
@@ -73,9 +76,12 @@ export const metadata = {
   manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+  params: { locale },
+}: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head />
       <body
         className={cn(
