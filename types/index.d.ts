@@ -51,3 +51,8 @@ export type DashboardConfig = {
   mainNav: MainNavItem[]
   sidebarNav: SidebarNavItem[]
 }
+
+export interface Status {
+  name: string
+  description: string
+}

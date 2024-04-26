@@ -82,10 +82,18 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "loading-ellipsis": {
+          "0%": { opacity: "0", content: '""' },
+          "25%": { opacity: "1", content: '.""' },
+          "50%": { opacity: "1", content: '..""' },
+          "75%": { opacity: "1", content: '...""' },
+          "100%": { opacity: "0", content: '""' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "loading-ellipsis": "loading-ellipsis 2s infinite",
       },
     },
   },

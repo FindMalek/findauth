@@ -14,6 +14,9 @@ dependencies:
   "@logsnag/next":
     specifier: ^1.0.3
     version: 1.0.3(next@14.2.1)(react-dom@18.2.0)(react@18.2.0)
+  "@openstatus/react":
+    specifier: ^0.0.3
+    version: 0.0.3(react@18.2.0)
   "@prisma/client":
     specifier: ^5.12.1
     version: 5.12.1(prisma@5.12.1)
@@ -845,6 +848,17 @@ packages:
       {
         integrity: sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==,
       }
+    dev: false
+
+  /@openstatus/react@0.0.3(react@18.2.0):
+    resolution:
+      {
+        integrity: sha512-uDiegz7e3H67pG8lTT+op+6w5keTT7XpcENrREaqlWl5j53TYyO8nheOG1PeNw2/Qgd5KaGeRJJFn1crhTUSYw==,
+      }
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@pkgjs/parseargs@0.11.0:

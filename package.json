@@ -25,6 +25,7 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@hookform/resolvers": "^3.3.4",
     "@logsnag/next": "^1.0.3",
+    "@openstatus/react": "^0.0.3",
     "@prisma/client": "^5.12.1",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
