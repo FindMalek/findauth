@@ -6,13 +6,13 @@ import { siteConfig } from "@/config/site"
 import { BackgroundBeams } from "@/components/ui/background-beams"
 import { WaitlistForm } from "@/components/form/waitlist"
 
-export const runtime = "edge";
+export const runtime = "edge"
 
 export async function generateMetadata() {
   const t = await getTranslations("app.pages.home")
 
   return {
-    title: t("title") + " | " + siteConfig.name,
+    title: `${siteConfig.name} | ${t("title")}`,
     description: t("description"),
     openGraph: {
       title: `${siteConfig.name} | ${t("title")}`,
@@ -33,6 +33,7 @@ export async function generateMetadata() {
     },
   }
 }
+
 export default function Home() {
   const t = useTranslations("app.pages.home")
 

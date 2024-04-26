@@ -8,6 +8,8 @@
         "paragraph": "Welcome to FindPlate - the easiest way to find your next meal. We're currently in private beta, but we'd love to have you join our waitlist We promise to never spam you, and you can unsubscribe at any time."
       },
       "not-found": {
+        "title": "Lost?",
+        "description": "The page you're looking for doesn't exist.",
         "data-failed": "Data failed..."
       }
     },
