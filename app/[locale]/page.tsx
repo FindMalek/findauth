@@ -6,6 +6,8 @@ import { siteConfig } from "@/config/site"
 import { BackgroundBeams } from "@/components/ui/background-beams"
 import { WaitlistForm } from "@/components/form/waitlist"
 
+export const runtime = "edge";
+
 export async function generateMetadata() {
   const t = await getTranslations("app.pages.home")
 
