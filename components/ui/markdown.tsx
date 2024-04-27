@@ -71,7 +71,7 @@ const components = {
   p: ({ className, ...props }) => (
     <p
       className={cn(
-        "leading-7 text-black/70 [&:not(:first-child)]:mt-6",
+        "leading-7 text-black/70 dark:text-white/70 [&:not(:first-child)]:mt-6",
         className
       )}
       {...props}
