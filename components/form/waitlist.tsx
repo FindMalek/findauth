@@ -26,7 +26,7 @@ function SubmitButton() {
   return (
     <button
       type="submit"
-      className="absolute right-2 top-2 z-10 h-7 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground"
+      className="bg-primary text-primary-foreground absolute right-2 top-2 z-10 h-7 rounded-md px-4 text-sm font-medium"
     >
       {t("join")}
     </button>
@@ -42,7 +42,7 @@ export function WaitlistForm() {
     <div>
       <div className="flex justify-center">
         {isSubmitted ? (
-          <div className="font-sm flex h-11 w-[330px] items-center justify-between rounded-lg border border-[#2C2C2C] px-3 py-1 text-primary">
+          <div className="font-sm text-primary flex h-11 w-[330px] items-center justify-between rounded-lg border border-[#2C2C2C] px-3 py-1">
             <p>{t("subscribed")}</p>
 
             <svg
@@ -105,7 +105,7 @@ export function WaitlistForm() {
                 autoComplete="email"
                 aria-label="Email address"
                 required
-                className="font-sm h-11 w-[360px] rounded-lg border border-border bg-transparent px-3 py-1 text-primary outline-none"
+                className="font-sm border-border text-primary h-11 w-[360px] rounded-lg border bg-transparent px-3 py-1 outline-none"
               />
               <SubmitButton />
             </fieldset>
