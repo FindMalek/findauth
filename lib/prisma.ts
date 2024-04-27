@@ -1,4 +1,11 @@
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient } from "@prisma/client/edge"
+import { withAccelerate } from "@prisma/extension-accelerate"
+
+const prisma = new PrismaClient().$extends(withAccelerate())
+
+export const db = prisma
+
+/* import { PrismaClient } from "@prisma/client/edge"
 
 declare global {
   var cachedPrisma: PrismaClient
@@ -15,3 +22,4 @@ if (process.env.NODE_ENV === "production") {
 }
 
 export const db = prisma
+ */
