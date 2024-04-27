@@ -12,8 +12,8 @@ export default function NotFound() {
         404
       </h1>
 
-      <div className="bg-background fixed inset-x-0 bottom-0 h-[350px] w-full">
-        <div className="border-border flex h-14 w-full items-center border-y-DEFAULT px-4">
+      <div className="fixed inset-x-0 bottom-0 h-[350px] w-full bg-background">
+        <div className="flex h-14 w-full items-center border-y-DEFAULT border-border px-4">
           <span className="loading-ellipsis animate-pulse text-red-600 dark:text-red-400">
             {t("data-failed")}
           </span>

@@ -1,16 +1,50 @@
 {
   "app": {
+    "language": "fr",
     "pages": {
       "home": {
-        "title": "Waitlist",
-        "description": "We are currently in private beta, but we'd love to have you join our waitlist.",
-        "join-the-waitlist": "Join the waitlist",
-        "paragraph": "Welcome to FindPlate - the easiest way to find your next meal. We're currently in private beta, but we'd love to have you join our waitlist We promise to never spam you, and you can unsubscribe at any time."
+        "title": "Liste d'attente",
+        "description": "Nous sommes actuellement en version bêta privée, mais nous serions ravis que vous rejoigniez notre liste d'attente.",
+        "join-the-waitlist": "Rejoindre la liste d'attente",
+        "paragraph": "Bienvenue sur FindPlate - le moyen le plus simple de trouver votre prochain repas. Nous sommes actuellement en version bêta privée, mais nous serions ravis que vous rejoigniez notre liste d'attente. Nous nous engageons à ne jamais vous envoyer de spam, et vous pouvez vous désinscrire à tout moment."
+      },
+      "not-found": {
+        "title": "Perdu ?",
+        "description": "La page que vous recherchez n'existe pas.",
+        "data-failed": "Échec des données..."
       }
     },
     "components": {
-      "header": {
-        "title": "My App"
+      "form": {
+        "waitlist": {
+          "subscribed": "Abonné",
+          "email-placeholder": "Entrez votre email",
+          "join": "Rejoindre",
+          "error": "Email déjà abonné",
+          "error-description": "Cet email est déjà abonné. Veuillez entrer une adresse email différente.",
+          "success": "Bienvenue sur la liste d'attente !",
+          "success-description": "Vous êtes maintenant sur la liste d'attente. Nous vous contacterons bientôt."
+        }
+      },
+      "ui": {
+        "status-widget": {
+          "operational": "Opérationnel",
+          "degraded-performance": "Performance dégradée",
+          "partial-outage": "Panique partielle",
+          "major-outage": "Panique majeure",
+          "unknown": "Inconnu",
+          "incident": "Incident",
+          "under-maintenance": "En maintenance"
+        }
+      },
+      "layout": {
+        "not-found-statuses": {
+          "status-code": "404 Introuvable",
+          "page": "Non trouvé",
+          "are-you-lost": "Êtes-vous perdu ?",
+          "reach-out": "Contactez",
+          "for-help": "pour obtenir de l'aide."
+        }
       }
     }
   }

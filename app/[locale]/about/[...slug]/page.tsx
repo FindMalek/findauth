@@ -92,8 +92,8 @@ export default async function Page({
         }}
       />
 
-      <BlurryCircle className="absolute right-16 top-[40%] -z-10 hidden bg-[#F59F95]/30 md:block dark:bg-[#F59F95]/10" />
-      <BlurryCircle className="absolute right-[30%] top-[70%] -z-10 hidden bg-[#3633D0]/5 md:block dark:bg-[#3633D0]/10" />
+      <BlurryCircle className="absolute right-16 top-[40%] -z-10 hidden bg-[#F59F95]/30 dark:bg-[#F59F95]/10 md:block" />
+      <BlurryCircle className="absolute right-[30%] top-[70%] -z-10 hidden bg-[#3633D0]/5 dark:bg-[#3633D0]/10 md:block" />
 
       <article className="w-full max-w-[680px] pt-[80px] md:pt-[150px]">
         <PostStatus status={post.tag} />
@@ -107,7 +107,7 @@ export default async function Page({
               alt={post.title}
               width={680}
               height={442}
-              className="mb-12"
+              className="mb-12 rounded-lg"
             />
           )}
 
