@@ -1,26 +1,22 @@
-![hero](github.png)
+![hero](/public/opengraph/web.png)
 
 <p align="center">
-	<h1 align="center"><b>Midday</b></h1>
+	<h1 align="center"><b>FindPlate</b></h1>
 <p align="center">
-    Run your business smarter
+    Run your food orders smarter 🪄
     <br />
     <br />
-    <a href="https://go.midday.ai/anPiuRx">Discord</a>
+ <!--    <a href="https://go.findmalek.com/anPiuRx">Discord</a>
+    · -->
+    <a href="https://plate.findmalek.com">Website</a>
     ·
-    <a href="https://midday.ai">Website</a>
-    ·
-    <a href="https://github.com/midday-ai/midday/issues">Issues</a>
+    <a href="https://github.com/findmalek/findplate/issues">Issues</a>
   </p>
 </p>
 
 # Under active development
 
-> We have been working with Midday for the past 4 months and our philosophy has been "make it work, make it right". Currently, we're actively improving Midday's code quality and best practices. In the meantime, fasten your seatbelts and enjoy the ride!
-
-# Get started
-
-We are working on the documentation to get started with Midday for local development: https://docs.midday.ai/local-development
+> FindPlate is dedicated to delivering a high-quality product and has been actively improving code quality and best practices. Our philosophy centers around providing a seamless and enjoyable user experience, with a focus on reliability, efficiency, and security. We're excited about the progress made and continue to innovate and improve the platform for our users.
 
 # App Architecture
 
@@ -30,25 +26,26 @@ We are working on the documentation to get started with Midday for local develop
 - Nextjs
 - Supabase
 - Shadcn
-- ToDesktop
-- Expo
 - TailwindCSS
 - Prisma
+- NextAuth
+- NextI18Next
 
 ### Hosting
 
-- Supabase (database, storage, realtime, auth)
+- Supabase (Database, storage, realtime)
 - Vercel (Website, edge-config, analytics and metrics)
+- Github (Codebase, issues, PRs, actions)
 
 ### Services
 
-- Trigger.dev (Background jobs)
-- Nodemailer (Email)
-- Novu (Notifications)
-- Github Actions (CI/CD)
-- Konnect (Payments)
-- Loops (Marketing email)
 - LogSnag (Events)
+- Nodemailer (Email)
+- Github Actions (CI/CD)
+- Trigger.dev (Background jobs)
+- Konnect (Payments)
+- Novu (Notifications)
+- Loops (Marketing email)
 - Dub (Short URLs)
 
 ## Repo Activity
