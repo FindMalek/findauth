@@ -11,3 +11,27 @@ export const siteConfig: SiteConfig = {
     github: "https://github.com/findmalek/findplate",
   },
 }
+
+export const notFoundMetadata = (t: (key: string) => string) => {
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: `${siteConfig.name} | ${t("title")}`,
+      description: t("description"),
+      images: [
+        {
+          url: `${siteConfig.url}/opengraph/not-found.png`,
+          alt: siteConfig.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${siteConfig.name} | ${t("title")}`,
+      description: siteConfig.description,
+      images: [`${siteConfig.url}/opengraph/not-found.png`],
+      creator: "@findmalek",
+    },
+  }
+}

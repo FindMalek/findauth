@@ -1,5 +1,6 @@
 {
   "app": {
+    "language": "en",
     "pages": {
       "home": {
         "title": "Waitlist",
