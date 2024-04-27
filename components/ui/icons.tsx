@@ -1,3 +1,4 @@
+import Image from "next/image"
 import {
   AlertTriangle,
   ArrowRight,
@@ -10,9 +11,8 @@ import {
   CreditCard,
   File,
   FileText,
-  Github,
   HelpCircle,
-  Image,
+  Image as ImageIcon,
   Laptop,
   Loader2,
   LucideIcon,
@@ -32,11 +32,29 @@ import {
   UserCogIcon,
   X,
 } from "lucide-react"
+import { FaDiscord, FaGithub } from "react-icons/fa"
+import {
+  MdOutlineDescription,
+  MdOutlineIntegrationInstructions,
+  MdOutlineMemory,
+} from "react-icons/md"
 
 export type Icon = LucideIcon
 
+function LogoIcon({ className }: { className?: string }) {
+  return (
+    <Image
+      src="/favicons/android-chrome-192x192.png"
+      alt="logo"
+      className={className}
+      width={32}
+      height={32}
+    />
+  )
+}
+
 export const Icons = {
-  logo: Command,
+  logo: LogoIcon,
   close: X,
   spinner: Loader2,
   chevronLeft: ChevronLeft,
@@ -44,7 +62,7 @@ export const Icons = {
   trash: Trash,
   post: FileText,
   page: File,
-  media: Image,
+  media: ImageIcon,
   settings: Settings,
   billing: CreditCard,
   ellipsis: MoreVertical,
@@ -58,7 +76,6 @@ export const Icons = {
   moon: Moon,
   laptop: Laptop,
   search: Search,
-  gitHub: Github,
   twitter: X,
   check: Check,
   orderbook: BookOpenText,
@@ -69,4 +86,9 @@ export const Icons = {
   student: PencilIcon,
   teacher: UserCogIcon,
   monitor: Monitor,
+  discord: FaDiscord,
+  github: FaGithub,
+  memory: MdOutlineMemory,
+  integrationInstructions: MdOutlineIntegrationInstructions,
+  description: MdOutlineDescription,
 }
