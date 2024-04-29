@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils"
 
 import { Toaster } from "@/components/ui/toaster"
 import { Analytics } from "@/components/layout/analytics"
+import { Header } from "@/components/layout/header"
 import { LayoutWrapper } from "@/components/layout/layout-wrapper"
 import { TailwindIndicator } from "@/components/layout/tailwind-indicator"
 
@@ -113,6 +114,7 @@ export default function RootLayout({
         )}
       >
         <LayoutWrapper locale={locale}>
+          <Header />
           {children}
           <Analytics />
           <Toaster />
