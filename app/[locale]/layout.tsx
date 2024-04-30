@@ -4,9 +4,11 @@ import type { Metadata, Viewport } from "next"
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
 import { LogSnagProvider } from "@logsnag/next"
+import { unstable_setRequestLocale } from "next-intl/server"
 
 import { env } from "@/env.mjs"
 
+import { locales } from "@/config/consts"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
@@ -94,10 +96,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
 }
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
+
 export default function RootLayout({
   children,
   params: { locale },
 }: RootLayoutProps) {
+  unstable_setRequestLocale(locale)
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>

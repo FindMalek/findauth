@@ -1,12 +1,10 @@
 import { useTranslations } from "next-intl"
-import { getTranslations } from "next-intl/server"
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import { siteConfig } from "@/config/site"
 
 import { BackgroundBeams } from "@/components/ui/background-beams"
 import { WaitlistForm } from "@/components/form/waitlist"
-
-export const runtime = "edge"
 
 export async function generateMetadata() {
   const t = await getTranslations("app.pages.home")
@@ -34,7 +32,12 @@ export async function generateMetadata() {
   }
 }
 
-export default function Home() {
+export default function Home({
+  params: { locale },
+}: {
+  params: { locale: string }
+}) {
+  unstable_setRequestLocale(locale)
   const t = useTranslations("app.pages.home")
 
   return (

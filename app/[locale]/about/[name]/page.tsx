@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { allAbouts } from "contentlayer/generated"
-import { getTranslations } from "next-intl/server"
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import { notFoundMetadata, siteConfig } from "@/config/site"
 
@@ -10,13 +10,25 @@ import { BlurryCircle } from "@/components/ui/blurry-circle"
 import { RenderMarkdown } from "@/components/ui/markdown"
 import { PostStatus } from "@/components/ui/post-status"
 
+export async function generateStaticParams({
+  params,
+}: {
+  params: { locale: string }
+}) {
+  const postSlugs = allAbouts
+    .filter((post) => post.lang === params.locale)
+    .map((about) => about.slugAsParams.replace("about/", ""))
+
+  return postSlugs.map((slug) => ({ name: slug, locale: params.locale }))
+}
+
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
   const translatedApp = await getTranslations("app")
   const post = allAbouts.find(
     (about) =>
-      about.slugAsParams === `about/${params.slug["0"]}` &&
+      about.slugAsParams === `about/${params.name}` &&
       about.lang === translatedApp("language")
   )
 
@@ -58,14 +70,16 @@ export async function generateMetadata({
 }
 
 export default async function Page({
-  params: { slug },
+  params: { name, locale },
 }: {
-  params: { slug: string }
+  params: { name: string; locale: string }
 }) {
+  unstable_setRequestLocale(locale)
   const translatedApp = await getTranslations("app")
+
   const post = allAbouts.find(
     (about) =>
-      about.slugAsParams === `about/${slug}` &&
+      about.slugAsParams === `about/${name}` &&
       about.lang === translatedApp("language")
   )
 
