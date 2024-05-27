@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "generate": "contentlayer build && prisma generate --no-engine",
+    "generate": "contentlayer build && prisma generate --no-engine && prisma db push",
     "build": "pnpm run generate && next build",
     "turbo": "next dev --turbo",
     "start": "next start",
@@ -27,7 +27,7 @@
     "@hookform/resolvers": "^3.3.4",
     "@logsnag/next": "^1.0.3",
     "@openstatus/react": "^0.0.3",
-    "@prisma/client": "^5.13.0",
+    "@prisma/client": "^5.14.0",
     "@prisma/extension-accelerate": "^1.0.0",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-navigation-menu": "^1.1.4",
@@ -79,7 +79,7 @@
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "prisma": "^5.13.0",
+    "prisma": "^5.14.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

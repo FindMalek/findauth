@@ -3,11 +3,12 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL_ACCELRATE")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL_ACCELRATE")
+  directUrl = env("DATABASE_URL")
 }
 
-model WaitlistEntry {
+model Waitlist {
   id        String   @id @default(cuid())
   email     String   @unique
   country   String

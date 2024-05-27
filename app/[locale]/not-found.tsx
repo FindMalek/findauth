@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl"
 
-import { StatusWidget } from "@/components/ui/status-widget"
 import { NotFoundStatuses } from "@/components/layout/not-found-statuses"
+import { StatusWidget } from "@/components/ui/status-widget"
 
 export default function NotFound() {
   const t = useTranslations("app.pages.not-found")

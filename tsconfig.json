@@ -18,7 +18,8 @@
     "paths": {
       "@/*": ["./*"],
       "@navigation": ["./lib/navigation.ts"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "contentlayer/generated": ["./.contentlayer/generated"],
+      "@findplate/*": ["./findplate/*"]
     },
     "plugins": [
       {

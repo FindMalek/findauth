@@ -16,26 +16,29 @@ import {
 
 import { MagicLinkData } from "@/types/auth"
 
-// TODO: Transalte this using import { getTranslations } from "next-intl/server"
-export function MagicLink({ magicLink }: { magicLink: MagicLinkData }) {
+import { siteConfig } from "@/config/site"
+
+export function EmailMagicLink({ magicLink }: { magicLink: MagicLinkData }) {
   return (
     <Html>
       <Head />
       <Preview>
-        Confirm your e-mail for FindPlate by clicking the button below.
+        Confirm your e-mail for {siteConfig.name} by clicking the button below.
       </Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
-            src="https://emojicdn.elk.sh/🍽️?style=facebook"
+            src={`${siteConfig.url}/logos/LogoIcon.png`}
             height="42"
-            alt="FindPlate logo"
+            alt={`${siteConfig.name} logo`}
             style={logo}
           />
-          <Heading style={heading}>Your login code for FindPlate</Heading>
+          <Heading style={heading}>
+            Your login code for {siteConfig.name}
+          </Heading>
           <Section style={buttonContainer}>
             <Button style={button} href={`${magicLink.otp_link}`}>
-              Login to FindPlate
+              Login to {siteConfig.name}
             </Button>
           </Section>
 
@@ -50,8 +53,8 @@ export function MagicLink({ magicLink }: { magicLink: MagicLinkData }) {
           </Section>
 
           <Hr style={hr} />
-          <Link href="https://www.FindPlate.vercel.app" style={reportLink}>
-            FindPlate
+          <Link href={siteConfig.url} style={reportLink}>
+            {siteConfig.name}
           </Link>
         </Container>
       </Body>
@@ -98,7 +101,7 @@ const buttonContainer = {
 }
 
 const button = {
-  backgroundColor: "#005167",
+  backgroundColor: "#73cb6b",
   borderRadius: "3px",
   fontWeight: "600",
   color: "#fff",
@@ -117,17 +120,6 @@ const reportLink = {
 const hr = {
   borderColor: "#dfe1e4",
   margin: "42px 0 26px",
-}
-
-const code = {
-  fontFamily: "monospace",
-  fontWeight: "700",
-  padding: "1px 4px",
-  backgroundColor: "#dfe1e4",
-  letterSpacing: "-0.3px",
-  fontSize: "21px",
-  borderRadius: "4px",
-  color: "#3c4149",
 }
 
 const codeBox = {

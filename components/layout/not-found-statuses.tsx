@@ -1,8 +1,9 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import type { Status } from "@/types"
 import { useTranslations } from "next-intl"
+
+import type { Status } from "@/types"
 
 import { getNotFoundStatus } from "@/config/consts"
 
